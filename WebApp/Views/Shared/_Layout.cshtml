@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+@{
+    var AppVersion = "WebApp1.Codes.MyApp.Version";
+    var AppCulture = ViewBag.Culture;
+    var AppLanguage = ViewBag.Language;
+}
+<html lang="@AppLanguage">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CG - @ViewData["Title"]</title>
+
+    
+    @*font-awesome*@
+    <link href="~/lib/font-awesome/css/font-awesome.min.css?@AppVersion" rel="stylesheet" />
+    @*font-awesome-animation*@
+    <link href="~/lib/font-awesome-animation/font-awesome-animation.min.css?@AppVersion" rel="stylesheet" />
+
+    @*bootstrap CSS*@
+    <link href="~/lib/bootstrap/4.6.0/css/bootstrap.min.css?@AppVersion" rel="stylesheet" />
+
+    <script src="~/lib/jquery/1/jquery.min.js"></script>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+        });
+
+        window.addEventListener('load', function () {
+            //window).resize
+            setTimeout(function () {
+                $(window).resize();
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+    @RenderBody()
+</body>
+</html>
