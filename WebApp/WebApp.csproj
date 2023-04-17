@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Data\**" />
+	  <Compile Remove="Models\**" />
+	  <Content Remove="Data\**" />
+	  <Content Remove="Models\**" />
+	  <EmbeddedResource Remove="Data\**" />
+	  <EmbeddedResource Remove="Models\**" />
+	  <None Remove="Data\**" />
+	  <None Remove="Models\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Dapper" Version="2.0.123" />
+		<PackageReference Include="DatabaseSchemaReader" Version="2.7.16" />
+		<PackageReference Include="System.Data.SqlClient" Version="4.8.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Views\Compare\" />
+	</ItemGroup>
+
+</Project>

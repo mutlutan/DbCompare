@@ -1,7 +1,7 @@
-﻿
-@{
+﻿@{
     Layout = "_Layout";
 }
+
 
 <div id="divCompare" class="container">
 
@@ -24,8 +24,9 @@
     </div>
 
     <div>
-        <button id="btnCompare" type="button" class="btn btn-danger">Compare</button>
-        <button id="btnTogle" type="button" class="btn btn-warning">Togle</button>
+        <button id="btnCompare" type="button" class="btn btn-danger btn-lg">Compare <div id="elmLoader" class=""></div></button>
+        <button id="btnTogle" type="button" class="btn btn-warning btn-lg">Togle</button>
+
     </div>
 
     <div>
@@ -37,11 +38,11 @@
 <script>
     window.addEventListener('load', (event) => {
 
-        function loaderShow(isShow){
-            if(isShow){
-                $("#btnCompare").addClass("fa-spin");
-            }else{
-                $("#btnCompare").removeClass("fa-spin");
+        function loaderShow(isShow) {
+            if (isShow) {
+                $("#btnCompare #elmLoader").addClass("loader");
+            } else {
+                $("#btnCompare #elmLoader").removeClass("loader");
             }
         }
 
@@ -58,15 +59,16 @@
                 data: _data,
                 type: "POST", dataType: "json",
                 beforeSend: function (jqXHR, settings) {
-                    loaderShow(true);
+                    setTimeout(function () { loaderShow(true); }, 100);
                 },
                 success: function (result, textStatus, jqXHR) {
-                    loaderShow(false);
-                    $("#textAreaSonuc").text(result.Mesaj);
+                    $("#textAreaSonuc").text(result.mesaj);
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    loaderShow(false);
                     alert("(" + jqXHR.status + ") " + jqXHR.statusText + "\n" + this.url);
+                },
+                complete: function (data) {
+                    setTimeout(function () { loaderShow(false); }, 100);
                 }
             });
 

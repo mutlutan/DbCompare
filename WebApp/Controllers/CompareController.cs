@@ -9,7 +9,7 @@ namespace WebApp1.Controllers
     public class CompareController : BaseController
     {
         public CompareController(IServiceProvider _serviceProvider) : base(_serviceProvider) { }
-        #region compare
+
         public IActionResult Index()
         {
             ViewBag.kaynak = this.connectionString;
@@ -37,7 +37,6 @@ namespace WebApp1.Controllers
             return Json(new { Sonuc = rSonuc, Mesaj = logs.ToString() });
         }
 
-        #endregion
 
 
 
