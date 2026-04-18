@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
 
-namespace WebApp1.Codes
+namespace WebApp.Codes
 {
     #region Genel Extensions
 

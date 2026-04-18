@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using Microsoft.Extensions.Configuration;
-using System.Data.SqlClient;
-using System.Text.Json;
+﻿using Microsoft.Data.SqlClient;
 
-namespace WebApp1.Codes
+namespace WebApp.Codes
 {
     #region MyApp
 

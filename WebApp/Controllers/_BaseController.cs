@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Globalization;
-using WebApp1.Codes;
+using WebApp.Codes;
 
 
-namespace WebApp1.Controllers
+namespace WebApp.Controllers
 {
     public class BaseController : Controller
     {

@@ -3,7 +3,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
-WebApp1.Codes.MyApp.Env = app.Environment;
+WebApp.Codes.MyApp.Env = app.Environment;
 
 app.UseStaticFiles();
 app.UseRouting();

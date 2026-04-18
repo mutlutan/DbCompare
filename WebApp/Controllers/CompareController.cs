@@ -1,15 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Text.Json;
-using WebApp1.Codes;
+using WebApp.Codes;
 
 
-namespace WebApp1.Controllers
+namespace WebApp.Controllers
 {
-    public class CompareController : BaseController
+    public class CompareController(IServiceProvider _serviceProvider) : BaseController(_serviceProvider)
     {
-        public CompareController(IServiceProvider _serviceProvider) : base(_serviceProvider) { }
-
         public IActionResult Index()
         {
             ViewBag.kaynak = this.connectionString;
